@@ -42,6 +42,8 @@ function onClick(chosenAnswer) {
     if (count < maxRounds) {
         console.log(chosenAnswer);
         answerCheck(chosenAnswer);
+        var f = document.getElementsByClassName("div.options");
+        f.style.visibility = "hidden";
     }
 };
 
