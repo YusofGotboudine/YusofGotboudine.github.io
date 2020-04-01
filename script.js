@@ -15,20 +15,15 @@ var optionsDisplay = document.getElementById("options");
 var optionButtons = [];
 
 var displayQn = function (count) {
-    if (count == maxRounds) {
-        displayBox.textContent = "Congratulations!"; //overall win condition
-        removeOptions();
-    } else {
-        displayBox.textContent = questionsArr[count].question;//display qn
-        console.log("Question number " + (count + 1));
-        console.log(displayBox.textContent);//display options
-        for (var j = 0; j < questionsArr[count].options.length; j++) {
-            document.getElementById("button" + j).innerHTML = questionsArr[count].options[j];
-            console.log(questionsArr[count].options[j]);
-        }
-
-    };
+    displayBox.textContent = questionsArr[count].question;//display qn
+    console.log("Question number " + (count + 1));
+    console.log(displayBox.textContent);//display options
+    for (var j = 0; j < questionsArr[count].options.length; j++) {
+        document.getElementById("button" + j).innerHTML = questionsArr[count].options[j];
+        console.log(questionsArr[count].options[j]);
+    }
 };
+
 displayQn(count);
 
 var removeOptions = function (event) {
@@ -51,7 +46,7 @@ var nextQnButton = function (event) {
     nextQnButton.id = "next-qn";
     nextQnButton.textContent = "Next Question";
     nextQnButton.type = "button";
-    // document.getElementById("next-qn").onclick = function () { nextQn() };
+    nextQnButton.onclick = function () { nextQn() };
     optionsDisplay.appendChild(nextQnButton);
 };
 
@@ -66,6 +61,10 @@ var winCondition = function (event) {
     removeOptions();
     nextQnButton();//adds next qn button
     count++;
+    if (count == maxRounds) {
+        document.getElementById("next-qn").outerHTML = "";
+        displayBox.textContent = "Congratulations!";
+    }
 };
 
 var loseCondition = function (event) {
@@ -78,10 +77,6 @@ var answerCheck = function (currentInput) {
     if ((currentInput == correctAns)) {//correct answer
         console.log("Correct Answer");
         winCondition();//display win and remove buttons add next qn button
-        // if () {
-
-        // };
-
     }
     else {                          //wrong answer
         console.log("Wrong Answer");
@@ -91,6 +86,5 @@ var answerCheck = function (currentInput) {
 
 function onClick(chosenAnswer) {
     answerCheck(chosenAnswer);
-    // nextQn();
 };
 
