@@ -87,4 +87,3 @@ var answerCheck = function (currentInput) {
 function onClick(chosenAnswer) {
     answerCheck(chosenAnswer);
 };
-
