@@ -21,11 +21,11 @@
   <div id="display">
     <h2 id="displayBox"></h2>
     <br>
-    <div class="options">
-      <span><button class="choiceButtons" id="button0" onClick=onClick(this.textContent)>A: 1</button></span>&nbsp;
-      <span><button class="choiceButtons" id="button1" onClick=onClick(this.textContent)>B: 2</button></span>&nbsp;
-      <span><button class="choiceButtons" id="button2" onClick=onClick(this.textContent)>C: 3</button></span>&nbsp;
-      <span><button class="choiceButtons" id="button3" onClick=onClick(this.textContent)>D: 4</button></span>
+    <div id="options">
+      <button class="choiceButtons" id="button0" onClick=onClick(this.textContent)>A: 1</button>
+      <button class="choiceButtons" id="button1" onClick=onClick(this.textContent)>B: 2</button>
+      <button class="choiceButtons" id="button2" onClick=onClick(this.textContent)>C: 3</button>
+      <button class="choiceButtons" id="button3" onClick=onClick(this.textContent)>D: 4</button>
     </div>
   </div>
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
@@ -38,9 +38,11 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script> -->
   <script>
-    // document.getElementsByClassName('choiceButtons').addEventListener('click', function (event) {
-    //   var currentInput = event.target.textContent;
-    //   var output = onClick(currentInput);
+    // document.getElementById('next-qn').addEventListener('click', function (event) {
+    //   console.log('next question is clicked');
+    //   // document.getElementById("next-qn");
+    //   // addOptions();
+    //   // displayQn(count);
     // });
   </script>
   <script src="script.js"></script>

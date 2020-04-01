@@ -20,7 +20,7 @@ header {
   border-radius: 20%;
 }
 
-.options{
+#options{
   display: flex;
   justify-content: center;
   font-family: 'Sen', sans-serif;
@@ -34,8 +34,24 @@ header {
   border: 2px solid black;
   transition-duration: 0.4s;
   cursor: pointer;
+  margin: 2%;
 }
 
 .choiceButtons:hover {
+  background-color: green;
+}
+
+#next-qn {
+  color: aqua;
+  background-color: cornsilk;
+  font-size: large;
+  border-radius: 30%;
+  background-color: cornsilk;
+  color: black;
+  border: 2px solid black;
+  cursor: pointer;
+}
+
+#next-qn:hover {
   background-color: green;
 }
