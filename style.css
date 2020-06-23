@@ -1,57 +1,53 @@
 body{
-  background-color: darkcyan;
+  background-image: url('https://i.imgur.com/INMoMi5.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
 }
 
-header {
-  font-family: 'Sen', sans-serif;
-  font-size: x-large;
+header{
+  font-size: xx-large;
   text-align: center;
-  color: rgb(91, 65, 128);
+  margin-top: 25px;
 }
 
-#display{
+div.navbar{
+  font-size: large;
+  text-align: right;
+  margin-left: 30px;
+  margin-right: 30px;
+  justify-content: space-evenly;
+}
+
+div#content{
+  margin-top: 30px;
   text-align: center;
-  font-family: 'Sen', sans-serif;
 }
 
-#displayBox{
-  font-size: x-large;
-  background-color: cornsilk;
-  border-radius: 20%;
+.navbar-option:hover{
+  background-color: grey;
 }
 
-#options{
-  display: flex;
-  justify-content: center;
-  font-family: 'Sen', sans-serif;
+a.email{
+  padding: 5px;
+  margin: 5px;
 }
 
-.choiceButtons{
-  font-size: large;
-  border-radius: 30%;
-  background-color: cornsilk;
-  color: black;
-  border: 2px solid black;
-  transition-duration: 0.4s;
-  cursor: pointer;
-  margin: 2%;
+a.email:hover{
+  background-color: grey;
 }
 
-.choiceButtons:hover {
-  background-color: green;
+img{
+  height: 200px;
+  border-radius: 80%;
 }
 
-#next-qn {
-  color: aqua;
-  background-color: cornsilk;
-  font-size: large;
-  border-radius: 30%;
-  background-color: cornsilk;
-  color: black;
-  border: 2px solid black;
-  cursor: pointer;
+p.about{
+  text-align: center;
+  padding-top: 20px;
 }
 
-#next-qn:hover {
-  background-color: green;
+p.projectTitle{
+  padding-left: 10px;
+  padding-right: 10px;
 }

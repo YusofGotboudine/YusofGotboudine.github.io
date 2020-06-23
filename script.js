@@ -1,89 +1,32 @@
 console.log("hello script js");
 
-var count = 0;
-var maxOptions = 4;
+var option = '';
+var contentDisplay = document.getElementById("content");
+var indexContent = document.getElementById("content").innerHTML;
+// console.log(indexContent);
 
-var questionsArr = [{ question: "What does 2 + 2 = ?", options: ["2", "4", "6", "8"], answer: "4" },
-{ question: "What is the capital of Ethiopia?", options: ["Addis Ababa", "Lagos", "Mogadishu", "Dakar"], answer: "Addis Ababa" },
-{ question: "Which of this animal lays eggs?", options: ["Mountain Goat", "Canadian Lynx", "African Pygmy Mouse", "Spiny Anteater"], answer: "Spiny Anteater" }];
+function onClick(selectedOption) {
+    // console.log(selectedOption);
+    option = selectedOption;
+    optionCheck(option);
+};
 
-var maxRounds = questionsArr.length;
-console.log("Maximum Rounds are: " + maxRounds);
-
-var displayBox = document.getElementById("displayBox");
-var optionsDisplay = document.getElementById("options");
-var optionButtons = [];
-
-var displayQn = function (count) {
-    displayBox.textContent = questionsArr[count].question;//display qn
-    console.log("Question number " + (count + 1));
-    console.log(displayBox.textContent);//display options
-    for (var j = 0; j < questionsArr[count].options.length; j++) {
-        document.getElementById("button" + j).innerHTML = questionsArr[count].options[j];
-        console.log(questionsArr[count].options[j]);
+var optionCheck = function (option) {
+    if (option == 'Yusof Gotboudine') {
+        // console.log('index selected');
+        contentDisplay.innerHTML = indexContent;
     }
-};
+    else if (option == 'About.') {
+        // console.log('about selected');
+        contentDisplay.innerHTML = '<img src="https://i.imgur.com/W9R5neB.jpg"><p class = "about">My name is Yusof Gotboudine and I am a full-stack developer based in sunny Singapore.</p>';
 
-displayQn(count);
-
-var removeOptions = function (event) {
-    for (var j = 0; j < maxOptions; j++) { //removes options buttons
-        button = document.getElementById("button" + j);
-        optionButtons.push(button);
-        optionsDisplay.removeChild(button);
-    };
-};
-
-var addOptions = function (event) {
-    for (var j = 0; j < maxOptions; j++) { //removes options buttons
-        button = optionButtons.shift();
-        optionsDisplay.appendChild(button);
-    };
-};
-
-var nextQnButton = function (event) {
-    var nextQnButton = document.createElement("button");
-    nextQnButton.id = "next-qn";
-    nextQnButton.textContent = "Next Question";
-    nextQnButton.type = "button";
-    nextQnButton.onclick = function () { nextQn() };
-    optionsDisplay.appendChild(nextQnButton);
-};
-
-var nextQn = function (event) {
-    document.getElementById("next-qn").outerHTML = "";
-    addOptions();
-    displayQn(count);
-};
-
-var winCondition = function (event) {
-    displayBox.textContent = "Correct Answer!";
-    removeOptions();
-    nextQnButton();//adds next qn button
-    count++;
-    if (count == maxRounds) {
-        document.getElementById("next-qn").outerHTML = "";
-        displayBox.textContent = "Congratulations!";
     }
-};
-
-var loseCondition = function (event) {
-    displayBox.textContent = "Good Attempt!";
-    removeOptions();
-};
-
-var answerCheck = function (currentInput) {
-    var correctAns = questionsArr[count].answer;
-    if ((currentInput == correctAns)) {//correct answer
-        console.log("Correct Answer");
-        winCondition();//display win and remove buttons add next qn button
+    else if (option == 'Projects.') {
+        // console.log('projects selected')
+        contentDisplay.innerHTML = '<p class="projectTitle"><a href="https://yusofgotboudine.github.io/Quiz-Game/">Quiz Game</a><br/>A simple interactive trivia questionnaire created with HTML, CSS and JavaScript.</p><p class="projectTitle"><a href="https://fierce-castle-72353.herokuapp.com/index">Tindr.</a><br/>A matchmaking app made with NodeJS. Its capabilities includes User signup/login as well as password encryption.</p><p class="projectTitle"><a href="https://swapr2.herokuapp.com/">Swapr.</a><br/>This application was developed with Ruby on Rails. It is a platform which enables users to exchange their used items with other users in order to reduce the environmental impact the current disposal methods cause.</p>';
     }
-    else {                          //wrong answer
-        console.log("Wrong Answer");
-        loseCondition();//display lose and remove options
-    };
-};
-
-function onClick(chosenAnswer) {
-    answerCheck(chosenAnswer);
-};
+    else if (option == 'Contact.') {
+        // console.log('contact selected')
+        contentDisplay.innerHTML = '<p><a class = "email" href = "mailto:yusof95@hotmail.com">Email me here!</a></p>';
+    }
+}
